@@ -1,5 +1,14 @@
 let gameSeq = [];
 let userSeq = [];
+
+const sounds = {
+    red: new Audio('sounds/red.mp3'),
+    blue: new Audio('sounds/blue.mp3'),
+    yellow: new Audio('sounds/yellow.mp3'),
+    green: new Audio('sounds/green.mp3'),
+    gameOver: new Audio('sounds/game-over.mp3')
+};
+
 let btns = ["red", "yellow", "green", "blue"];
 let h2 = document.querySelector("h2");
 let instructions = document.getElementById("instructions");
@@ -7,7 +16,7 @@ let highScoreElement = document.getElementById("high-score");
 
 let started = false;
 let level = 0;
-let highScore = 0;  // New variable to store the highest score
+let highScore = 0;  // Variable to store the highest score
 
 let start_btn = document.querySelector(".start");
 start_btn.addEventListener("click", function () {
@@ -15,14 +24,24 @@ start_btn.addEventListener("click", function () {
         console.log("Game Started");
         started = true;
 
-        // Update the instructions when the game starts
+        // Update instructions when the game starts
         instructions.innerHTML = `<p>Game Started! Follow the sequence of button flashes.</p>`;
 
         levelUp();
     }
 });
 
+// Play sound for the button color or game over
+function playSound(color) {
+    if (sounds[color]) {
+        sounds[color].play();
+    }
+}
+
 function gameFlash(randBtn) {
+    // Play the corresponding sound for the button flash
+    playSound(randBtn.id);
+
     randBtn.classList.add("flash");
     setTimeout(function () {
         randBtn.classList.remove("flash");
@@ -30,6 +49,9 @@ function gameFlash(randBtn) {
 }
 
 function userFlash(randBtn) {
+    // Play the corresponding sound for user input
+    playSound(randBtn.id);
+
     randBtn.classList.add("userflash");
     setTimeout(function () {
         randBtn.classList.remove("userflash");
@@ -64,6 +86,9 @@ function checkAnswer(idx) {
             highScoreElement.innerText = `Highest Score: ${highScore}`;  // Display the updated high score
         }
 
+        // Play the game over sound
+        playSound('gameOver');
+
         // Update the instructions on game over
         instructions.innerHTML = `
             <h3>Game Over!</h3>
@@ -80,7 +105,7 @@ function checkAnswer(idx) {
 
 function btnPress() {
     let btn = this;
-    userFlash(btn);
+    userFlash(btn);  // Play sound when user clicks
     let userColor = btn.getAttribute("id");
     userSeq.push(userColor);
     checkAnswer(userSeq.length - 1);

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding:0;
+    border: none;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+h1,h2{
+    color: white;
+
+}
+#instructions{
+    color: white;
+    font-size: 24px;
+}
+#instructions ul {
+    list-style-type: none;
+    padding-left: 0; /* Removes default padding */
+}
+
+#instructions li {
+    margin: 10px 0;
+    padding-left: 10px; /* Indents the text slightly */
+}
+body{
+    text-align: center;
+    background-color:rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+}
+.btn-cont{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 8px solid white;
+    margin: 10px;
+}
+.btn:hover{
+    transform: scale(1.02);
+}
+.red{
+    background-color: red;
+    border-top-left-radius: 50%;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.start{
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 24px;
+    height: 50px;
+    width: 150px;
+    background-color: rgb(215, 221, 226);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.start:hover {
+    background-color: rgb(190, 210, 220);
+}
+.flash{
+    background-color: white;
+}
+.userflash{
+    background-color: violet;
+}
+#high-score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+footer {
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}

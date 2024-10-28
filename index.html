@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="simon say logo.jpeg">
+</head>
+<body>
+    <h3 id="high-score">Highest Score: 0</h3>
+
+    <h1>Simon Says Game</h1>
+    <h2>Press the start button to begin the game</h2>
+    <br>
+
+    <!-- Instructions for the user -->
+    <div id="instructions">
+        <h3>How to Play:</h3>
+        <ul>
+            <li>• Press the start button to begin the game.</li>
+            <li>• Watch the sequence of button flashes.</li>
+            <li>• Click the buttons in the same order as the sequence.</li>
+            <li>• With each correct sequence, the game adds one more flash!</li>
+            <li>• If you make a mistake, the game will end. Try to beat your high score!</li>
+        </ul>
+    </div>
+
+    <div class="btn-cont">
+        <div class="line-one">
+            <div class="btn red" id="red" type="button"></div>
+            <div class="btn blue" id="blue" type="button"></div>
+        </div>
+        <div class="line-two">
+            <div class="btn yellow" id="yellow" type="button"></div>
+            <div class="btn green" id="green" type="button"></div>
+        </div>
+    </div>
+
+    <button class="start"> Start </button>
+    <footer>
+        <p>Built by Jagrat Gupta</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>

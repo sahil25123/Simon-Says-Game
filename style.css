@@ -72,7 +72,7 @@ body{
     background-color: white;
 }
 .userflash{
-    background-color: violet;
+    background-color: rgb(255, 255, 255);
 }
 #high-score {
     position: absolute;
